@@ -39,15 +39,8 @@ A rule-based NLP web application that analyzes user-provided chat text to scan f
 
 ## Implementation
 ### For Software:
-**Installation**
-```bash
-npm install
-```
-
 **Run**
-```bash
-node server/server.js
-```
+Simply open `index.html` in your web browser or use GitHub Pages.
 
 ### For Hardware:
 **Components Required**
