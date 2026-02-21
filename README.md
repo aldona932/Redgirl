@@ -1,48 +1,127 @@
-# Red Flag Detector | Chat Analyzer
+# Red Flag Detector Chat Analyzer 🎯
 
+## Basic Details
+* **Team Name:red girl
+* **Team Members**
+  * Member 1: aldona932 - st.Joseph's college (Autonomous ), Devagiri
+    
+
+
+## Hosted Project Link
+https://github.com/aldona932/Redgirl.git
+
+## Project Description
 A full-stack web application designed to analyze pasted chat histories or text documents to detect toxic language, negative sentiments, and manipulative/gaslighting phrases using rule-based Natural Language Processing.
 
+## The Problem statement
+Identifying toxic, manipulative, and gaslighting behavior in text conversations can often be difficult or subtle, leaving individuals vulnerable to emotional manipulation and abusive language without realizing it.
+
+## The Solution
+A rule-based NLP web application that analyzes user-provided chat text to scan for specific keywords and phrases associated with toxicity, negative sentiment, and manipulation. It provides a visual dashboard with interactive text highlights, an overall risk score, and customized safety advice.
+
+## Technical Details
+### Technologies/Components Used
+**For Software:**
+* **Languages used:** JavaScript, HTML, CSS, Node.js
+* **Frameworks used:** Express.js
+* **Libraries used:** `cors`, `helmet`
+* **Tools used:** VS Code, Git
+
+**For Hardware:**
+* **Main components:** N/A
+* **Specifications:** N/A
+* **Tools required:** N/A
+
 ## Features
-- **Frontend Dashboard:** Modern dark-mode UI with dynamic SVG score charts, file uploading, and highlighted text capabilities.
-- **Modular NLP Engine:** Separated logic for toxicity, sentiment, manipulation, and scoring.
-- **Live Highlight Rendering:** Safely parses text and visually highlights offending phrases with interactive tooltips.
-- **Security:** Built with input sanitization, Helmet, and CORS middleware.
+* **Feature 1:** Toxicity Detection - Scans and flags aggressive or toxic language using keyword dictionaries.
+* **Feature 2:** Manipulation Analysis - Identifies common gaslighting and manipulative phrases within text.
+* **Feature 3:** Sentiment Scoring - Gauges overall tone by counting positive and negative words.
+* **Feature 4:** Interactive Visual Dangers - Safely rendered interactive UI highlights showing exact locations of red flags inside your chat.
 
-## Project Structure
-```
-├── client/                 # Frontend assets
-│   ├── index.html          # Core layout
-│   ├── css/styles.css      # Custom styling & animations
-│   └── js/
-│       ├── app.js          # Client controller
-│       ├── api.js          # Fetch abstraction
-│       └── ui.js           # UI rendering library
-├── server/                 # Node.js Backend
-│   ├── server.js           # Entry point
-│   ├── routes/             # API routes
-│   ├── middleware/         # Security functions
-│   ├── controllers/        # Request handling
-│   ├── modules/            # NLP logic (toxicity, sentiment, etc.)
-│   └── utils/              # Helper functions (textParser)
-└── package.json
+## Implementation
+### For Software:
+**Installation**
+```bash
+npm install
 ```
 
-## Setup & Running Locally
+**Run**
+```bash
+node server/server.js
+```
 
-1. **Install Dependencies**
-   Make sure you have Node.js installed, then run:
-   ```bash
-   npm install
-   ```
+### For Hardware:
+**Components Required**
+* N/A
 
-2. **Start the Server**
-   ```bash
-   node server/server.js
-   ```
+**Circuit Setup**
+* N/A
 
-3. **Access the App**
-   Open your browser and navigate to:
-   `http://localhost:3000`
+## Project Documentation
+### For Software:
 
-## Usage
-Simply hover or click over the textarea, paste in a raw chat snippet, or upload a `.txt` file using the button. Click **Analyze Chat** to instantly get a risk score, category breakdown, sentiment evaluation, and actionable safety advice.
+**Screenshots (Add at least 3)**
+![Screenshot1](Add screenshot 1 here with proper name) Dashboard Overview
+
+![Screenshot2](Add screenshot 2 here with proper name) Flag Breakdown
+
+![Screenshot3](Add screenshot 3 here with proper name) Sentiment & Safety Advice
+
+**Diagrams**
+* **System Architecture:**
+*(Add Architecture Diagram Here)*
+A standard Client-Server architecture. The Client (HTML/JS/CSS) captures chat text and sends it to the Server (Node.js/Express) via API. The Server invokes independent NLP modules (toxicity, manipulation, sentiment) and aggregates a risk score before responding with a JSON payload to update the DOM.
+
+* **Application Workflow:**
+*(Add Workflow Here)*
+User uploads text -> Client performs API Fetch -> Node.js server sanitizes input -> Text passed sequentially through rule-based matching dictionaries -> Risk aggregate calculated -> Response JSON fetched by Client -> UI circles, stats, and safe innerHTML text replacements rendered.
+
+### For Hardware:
+**Schematic & Circuit**
+* N/A
+
+**Build Photos**
+* N/A
+
+## Additional Documentation
+### For Web Projects with Backend:
+**API Documentation**
+* **Base URL:** `http://localhost:3000` (or your hosted domain)
+
+**Endpoints**
+**POST /api/analyze**
+* **Description:** Analyzes a block of text for red flags.
+* **Request Body:**
+  ```json
+  {
+    "text": "Your chat text goes here."
+  }
+  ```
+* **Response:**
+  ```json
+  {
+    "riskScore": 35,
+    "flags": [
+      {
+        "phrase": "You are stupid.",
+        "match": "stupid",
+        "type": "toxicity",
+        "description": "Found toxic or aggressive language"
+      }
+    ],
+    "categories": {"toxicity": 1, "manipulation": 0, "negativeSentiment": 1},
+    "suggestions": ["Toxic language was detected."],
+    "sentiment": "negative"
+  }
+  ```
+
+### For Mobile Apps:
+**App Flow Diagram**
+* N/A
+
+**Installation Guide**
+* N/A
+
+### For Hardware Projects:
+**Bill of Materials (BOM)**
+* N/A
