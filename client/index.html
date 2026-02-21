@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Flag Detector | Chat Analyzer</title>
+    <meta name="description" content="Analyze your chats for toxicity, manipulation, and negative sentiment.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <span class="logo-icon">🚩</span>
+                <h1>Red Flag <span>Detector</span></h1>
+            </div>
+            <p class="subtitle">Analyze conversations for toxic and manipulative language.</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <div class="textarea-container">
+                    <textarea id="chat-input" placeholder="Paste your chat history here to analyze..."
+                        spellcheck="false"></textarea>
+                    <div class="actions">
+                        <label for="file-upload" class="btn btn-secondary">
+                            📄 Upload Text File
+                        </label>
+                        <input type="file" id="file-upload" accept=".txt" style="display: none;">
+                        <button id="analyze-btn" class="btn btn-primary">Analyze Chat</button>
+                    </div>
+                </div>
+                <div id="loading" class="hidden">
+                    <div class="spinner"></div>
+                    <p>Analyzing conversation...</p>
+                </div>
+            </section>
+
+            <section id="results-section" class="results-section hidden">
+                <div class="results-header">
+                    <h2>Analysis Results</h2>
+                    <button id="reset-btn" class="btn btn-icon">↺ Reset</button>
+                </div>
+
+                <div class="dashboard">
+                    <div class="score-card" id="score-card">
+                        <h3>Risk Score</h3>
+                        <div class="score-circle">
+                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                <path class="circle-bg"
+                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle" id="score-circle-path" stroke-dasharray="0, 100"
+                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            </svg>
+                            <div class="score-value" id="risk-score-val">0</div>
+                        </div>
+                        <p id="risk-label" class="risk-label">Low Risk</p>
+                    </div>
+
+                    <div class="stats-card">
+                        <h3>Categories Detected</h3>
+                        <ul class="stats-list" id="categories-list">
+                            <!-- Populated by JS -->
+                        </ul>
+                        <div class="sentiment-indicator" id="sentiment-indicator">
+                            Overall Sentiment: <span>Neutral</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="advice-card">
+                    <h3>💡 Safety Suggestions</h3>
+                    <ul id="suggestions-list" class="suggestions-list">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+
+                <div class="analysis-details">
+                    <h3>Highlighted Text</h3>
+                    <div id="highlighted-text" class="highlighted-content">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Not medical or legal advice. Information processed locally where possible.</p>
+        </footer>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
